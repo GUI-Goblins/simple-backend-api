@@ -22,7 +22,7 @@ app.post('/adventure', async (req, res) => {
         requestBody
       );
     } else {
-      response = await axios.get(
+      response = await axios.post(
         'https://tjmp838d98.execute-api.us-west-2.amazonaws.com/WorkingPOST/user/1'
       );
     }
