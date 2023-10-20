@@ -1,9 +1,13 @@
+'use strict';
+const dotenv = require('dotenv');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const axios = require('axios');
-const port = 3001;
+
+dotenv.config();
+const PORT = process.env.PORT;
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -35,7 +39,6 @@ app.post('/adventure', async (req, res) => {
   }
 });
 
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on PORT ${port}`);
 });
